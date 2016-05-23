@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LTTools"
-  s.version      = "0.0.1"
-  s.summary      = "LTTools"
+  s.version      = "0.0.2"
+  s.summary      = "LTTools test"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -80,7 +80,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/yelon21/LTToolsDemo.git", :tag => "v0.0.1" }
+  # s.source       = { :git => "https://github.com/yelon21/LTToolsDemo.git", :tag => "v0.0.2" }
+  s.source       = { :git => "https://github.com/yelon21/LTToolsDemo.git", :commit => "be8053f5bbc631ddbee10684eecd0df383bff106" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -118,7 +119,7 @@ Pod::Spec.new do |s|
   #
 
   s.framework  = "WebKit"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
+  # s.frameworks = "UIKit", "WebKit"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
@@ -135,8 +136,6 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
  
   s.dependency 'SSKeychain', '~> 1.4.0'
-  
   s.dependency 'GTMBase64', '~> 1.0.0'
-  # s.dependency "JSONKit", "~> 1.4"
-  # s.dependency "AFNetworking", "~> 2.2.4"
+
 end

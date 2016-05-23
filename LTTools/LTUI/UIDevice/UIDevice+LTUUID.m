@@ -13,7 +13,7 @@
 
 + (NSString *)LT_appUUID{
     
-    NSString *bundleId = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+//    NSString *bundleId = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
     NSString *retrieveuuid = @"";//[SSKeychain passwordForService:bundleId
 //                                                    account:@"_uuid"];
     if (retrieveuuid == nil || [retrieveuuid isEqualToString:@""]){

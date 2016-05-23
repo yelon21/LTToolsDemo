@@ -10,7 +10,7 @@
 
 #import "NSObject_define.h"
 #import "LTOpenSettings.h"
-#import "GTMBase64.h"
+//#import "GTMBase64.h"
 
 @interface LTLocation()<CLLocationManagerDelegate>{
     
@@ -122,12 +122,12 @@
                 
                 if ([dic[@"error"] integerValue] == 0) {
                     
-                    NSString *xEnc = dic[@"x"];
-                    NSString *yEnc = dic[@"y"];
+//                    NSString *xEnc = dic[@"x"];
+//                    NSString *yEnc = dic[@"y"];
                     
                     
-                    self.longitudeBaiDu = [[NSString alloc]initWithData:[GTMBase64 decodeString:xEnc] encoding:NSUTF8StringEncoding];
-                    self.latitudeBaiDu = [[NSString alloc]initWithData:[GTMBase64 decodeString:yEnc] encoding:NSUTF8StringEncoding];
+//                    self.longitudeBaiDu = [[NSString alloc]initWithData:[GTMBase64 decodeString:xEnc] encoding:NSUTF8StringEncoding];
+//                    self.latitudeBaiDu = [[NSString alloc]initWithData:[GTMBase64 decodeString:yEnc] encoding:NSUTF8StringEncoding];
                 }
             }
             NSLog(@"longitudeStr == %@,%@",_latitudeBaiDu,_longitudeBaiDu);
