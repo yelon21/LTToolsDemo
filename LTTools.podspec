@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LTTools"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "LTTools test"
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  个人工具，测试测试，填充满啊啊啊啊啊
+  This description is used to generate tags and improve search results
                    DESC
 
   s.homepage     = "https://github.com/yelon21/LTToolsDemo"
@@ -68,7 +68,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "6.0"
 
   #  When using multiple platforms
-  s.ios.deployment_target = "6.0"
+  # s.ios.deployment_target = "6.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/yelon21/LTToolsDemo.git", :tag => "v0.0.4" }
+  s.source       = { :git => "https://github.com/yelon21/LTToolsDemo.git", :tag => "v0.0.5" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
