@@ -68,10 +68,15 @@
         
         if ((__bridge id)abLastName != nil)
         {
-            nameString = [NSString stringWithFormat:@"%@ %@", nameString, lastNameString];
+            nameString = [[NSString alloc]initWithFormat:@"%@ %@", nameString, lastNameString];
         }
     }
-    NSString *name = nameString;
+    
+    NSString *name = [nameString copy];
+    
+    if (abName) CFRelease(abName);
+    if (abLastName) CFRelease(abLastName);
+    if (abFullName) CFRelease(abFullName);
     
     ABPropertyID multiProperties[] = {
         kABPersonPhoneProperty
@@ -129,10 +134,6 @@
     }
     
     NSLog(@"tels=%@",tels);
-    
-    if (abName) CFRelease(abName);
-    if (abLastName) CFRelease(abLastName);
-    if (abFullName) CFRelease(abFullName);
     
     if (self.didSelectPerson) {
         

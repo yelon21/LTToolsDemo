@@ -26,7 +26,7 @@
         self.key = @"Root";
     }
     
-    listArray = [LTPlistReader LT_getDictionary:@"ListKind" forKey:self.key];
+    listArray = [LTPlistReader LT_getArray:@"ListKind" forKey:self.key];
 
     self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
     self.tableView.delegate = self;

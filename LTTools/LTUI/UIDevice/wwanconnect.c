@@ -208,8 +208,14 @@ extern MyInfoRef StartWWAN(ConnectClientCallBack clientCB, void *refCon)
 		
 		if (myInfoPtr->isStreamInitd)
 		{
-			CFRelease(myInfoPtr->rStreamRef);
-			CFRelease(myInfoPtr->wStreamRef);
+            if (myInfoPtr->rStreamRef) {
+                
+                CFRelease(myInfoPtr->rStreamRef);
+            }
+            if (myInfoPtr->wStreamRef) {
+                
+                CFRelease(myInfoPtr->wStreamRef);
+            }
 			myInfoPtr->isStreamInitd = FALSE;
 		}
 		free(myInfoPtr);

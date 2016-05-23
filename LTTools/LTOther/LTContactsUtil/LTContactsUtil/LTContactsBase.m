@@ -10,4 +10,9 @@
 
 @implementation LTContactsBase
 
++ (BOOL)LT_checkAuthorizationStatus{
+
+    return NO;
+}
+
 @end

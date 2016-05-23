@@ -7,7 +7,7 @@
 //
 
 #import "UIDevice+LTUUID.h"
-#import <SSKeychain.h>
+#import "SSKeychain.h"
 
 @implementation UIDevice (LTUUID)
 
@@ -21,6 +21,7 @@
         CFUUIDRef uuid = CFUUIDCreate(NULL);
         assert(uuid != NULL);
         CFStringRef uuidStr = CFUUIDCreateString(NULL, uuid);
+        CFRelease(uuid);
         retrieveuuid = [NSString stringWithFormat:@"%@", uuidStr];
         CFRelease(uuidStr);
         [SSKeychain setPassword:retrieveuuid

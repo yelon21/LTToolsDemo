@@ -84,6 +84,8 @@
     //通讯录中人数
     CFIndex nPeople = ABAddressBookGetPersonCount(addressBooks);
     
+    CFRelease(addressBooks);
+    
     //循环，获取每个人的个人信息
     for (NSInteger i = 0; i < nPeople; i++)
     {
@@ -131,7 +133,10 @@
             if (valuesRef != nil) valuesCount = ABMultiValueGetCount(valuesRef);
             
             if (valuesCount == 0) {
-                CFRelease(valuesRef);
+                if (valuesRef) {
+                    
+                    CFRelease(valuesRef);
+                }
                 continue;
             }
             //获取电话号码和email
@@ -166,7 +171,7 @@
         if (abFullName) CFRelease(abFullName);
         
     }
-    
+    CFRelease(allPeople);
     return self.personArray;
 }
 

@@ -14,7 +14,7 @@
 - (NSString *)htmlForJPGImage:(UIImage *)image
 {
     NSData *imageData = UIImageJPEGRepresentation(image,1.0);
-    NSString *imageSource = [NSString stringWithFormat:@"data:image/jpg;base64,%@",[imageData base64Encoding]];
+    NSString *imageSource = [NSString stringWithFormat:@"data:image/jpg;base64,%@",[GTMBase64 stringByEncodingData:imageData]];
     return [NSString stringWithFormat:@"<img src = \"%@\" />", imageSource];
 }
 
