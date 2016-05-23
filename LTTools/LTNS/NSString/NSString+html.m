@@ -7,14 +7,14 @@
 //
 
 #import "NSString+html.h"
-//#import "GTMBase64.h"
+#import "GTMBase64.h"
 @implementation NSString (html)
 
 //编码图片
 - (NSString *)htmlForJPGImage:(UIImage *)image
 {
-//    NSData *imageData = UIImageJPEGRepresentation(image,1.0);
-    NSString *imageSource = @"";//[NSString stringWithFormat:@"data:image/jpg;base64,%@",[GTMBase64 stringByEncodingData:imageData]];
+    NSData *imageData = UIImageJPEGRepresentation(image,1.0);
+    NSString *imageSource = [NSString stringWithFormat:@"data:image/jpg;base64,%@",[GTMBase64 stringByEncodingData:imageData]];
     return [NSString stringWithFormat:@"<img src = \"%@\" />", imageSource];
 }
 

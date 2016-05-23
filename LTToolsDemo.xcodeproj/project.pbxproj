@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		10283DE7618966545B16861F /* libPods-LTToolsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBF62D52B3C1C0F20ACB3B2 /* libPods-LTToolsDemo.a */; };
+		6391DCBF1CF35DBA00076BC2 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391DCBD1CF35DBA00076BC2 /* GTMBase64.m */; };
+		6391DCC51CF35F0000076BC2 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391DCC21CF35F0000076BC2 /* SSKeychain.m */; };
+		6391DCC61CF35F0000076BC2 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391DCC41CF35F0000076BC2 /* SSKeychainQuery.m */; };
 		63B24F201CF2DB5400DD6199 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B24F1F1CF2DB5400DD6199 /* main.m */; };
 		63B24F231CF2DB5400DD6199 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B24F221CF2DB5400DD6199 /* AppDelegate.m */; };
 		63B24F261CF2DB5400DD6199 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B24F251CF2DB5400DD6199 /* ViewController.m */; };
@@ -80,6 +83,13 @@
 
 /* Begin PBXFileReference section */
 		0EBF62D52B3C1C0F20ACB3B2 /* libPods-LTToolsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTToolsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6391DCBC1CF35DBA00076BC2 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		6391DCBD1CF35DBA00076BC2 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		6391DCBE1CF35DBA00076BC2 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		6391DCC11CF35F0000076BC2 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		6391DCC21CF35F0000076BC2 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		6391DCC31CF35F0000076BC2 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		6391DCC41CF35F0000076BC2 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		63B24F1B1CF2DB5400DD6199 /* LTToolsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTToolsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B24F1F1CF2DB5400DD6199 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		63B24F211CF2DB5400DD6199 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -227,6 +237,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6391DCBA1CF35DBA00076BC2 /* OtherLibs */ = {
+			isa = PBXGroup;
+			children = (
+				6391DCC01CF35F0000076BC2 /* SSKeychain */,
+				6391DCBB1CF35DBA00076BC2 /* GTMBase64 */,
+			);
+			path = OtherLibs;
+			sourceTree = "<group>";
+		};
+		6391DCBB1CF35DBA00076BC2 /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				6391DCBC1CF35DBA00076BC2 /* GTMBase64.h */,
+				6391DCBD1CF35DBA00076BC2 /* GTMBase64.m */,
+				6391DCBE1CF35DBA00076BC2 /* GTMDefines.h */,
+			);
+			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		6391DCC01CF35F0000076BC2 /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				6391DCC11CF35F0000076BC2 /* SSKeychain.h */,
+				6391DCC21CF35F0000076BC2 /* SSKeychain.m */,
+				6391DCC31CF35F0000076BC2 /* SSKeychainQuery.h */,
+				6391DCC41CF35F0000076BC2 /* SSKeychainQuery.m */,
+			);
+			path = SSKeychain;
+			sourceTree = "<group>";
+		};
 		63B24F121CF2DB5400DD6199 = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +433,7 @@
 		63B24F681CF2DC3100DD6199 /* LTTools */ = {
 			isa = PBXGroup;
 			children = (
+				6391DCBA1CF35DBA00076BC2 /* OtherLibs */,
 				63B24F691CF2DC3100DD6199 /* LTNS */,
 				63B24F811CF2DC3100DD6199 /* LTOther */,
 				63B24FAE1CF2DC3100DD6199 /* LTUI */,
@@ -907,11 +948,13 @@
 				63B24FF21CF2DC3100DD6199 /* LTAddressBookSelect.m in Sources */,
 				63B250081CF2DC3100DD6199 /* LTTitleActivityView.m in Sources */,
 				63B24FFA1CF2DC3100DD6199 /* LTInstallProcess.m in Sources */,
+				6391DCBF1CF35DBA00076BC2 /* GTMBase64.m in Sources */,
 				63B24FFC1CF2DC3100DD6199 /* LTLocalNotification.m in Sources */,
 				63B250121CF2DC3100DD6199 /* UIDevice+LTNet.m in Sources */,
 				63B24FE91CF2DC3100DD6199 /* NSData+LTCommon.m in Sources */,
 				63B24F651CF2DBFE00DD6199 /* DemoWebViewController.m in Sources */,
 				63B250071CF2DC3100DD6199 /* LTLoadingView.m in Sources */,
+				6391DCC51CF35F0000076BC2 /* SSKeychain.m in Sources */,
 				63B24FEF1CF2DC3100DD6199 /* NSString+LTLocalizedString.m in Sources */,
 				63B24F661CF2DBFE00DD6199 /* LTWebViewVCTest.m in Sources */,
 				63B24FF31CF2DC3100DD6199 /* LTContactSelect.m in Sources */,
@@ -942,6 +985,7 @@
 				63B24FF51CF2DC3100DD6199 /* LTAddressBookStore.m in Sources */,
 				63B24F5A1CF2DBFE00DD6199 /* BaseViewController.m in Sources */,
 				63B24F631CF2DBFE00DD6199 /* InstallProcessLV.m in Sources */,
+				6391DCC61CF35F0000076BC2 /* SSKeychainQuery.m in Sources */,
 				63B250001CF2DC3100DD6199 /* LTPlistReader.m in Sources */,
 				63B24FF11CF2DC3100DD6199 /* NSString+LTTransform.m in Sources */,
 				63B250151CF2DC3100DD6199 /* UIImage+LTCommon.m in Sources */,

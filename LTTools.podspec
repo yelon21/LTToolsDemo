@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  个人工具，测试测试
+  个人工具，测试测试，填充满啊啊啊啊啊
                    DESC
 
   s.homepage     = "https://github.com/yelon21/LTToolsDemo"
@@ -68,7 +68,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "6.0"
 
   #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
+  s.ios.deployment_target = "6.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
@@ -80,8 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  # s.source       = { :git => "https://github.com/yelon21/LTToolsDemo.git", :tag => "v0.0.2" }
-  s.source       = { :git => "https://github.com/yelon21/LTToolsDemo.git", :commit => "be8053f5bbc631ddbee10684eecd0df383bff106" }
+  s.source       = { :git => "https://github.com/yelon21/LTToolsDemo.git", :tag => "v0.0.2" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -134,8 +133,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
- 
-  s.dependency 'SSKeychain', '~> 1.4.0'
-  s.dependency 'GTMBase64', '~> 1.0.0'
 
 end

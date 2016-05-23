@@ -4,17 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>GTMBase64.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-LTToolsDemo.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SSKeychain.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>167B3D74F858D2C5A035084E562B000A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>304EA90FC13024DFA4D6193A29D69F53</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CE6B973F79EE0DC3090B7B2C9B209246</key>
+		<key>7B982185C60834992D6FE77C6A559982</key>
 		<dict>
 			<key>primary</key>
 			<true/>
