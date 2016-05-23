@@ -159,7 +159,6 @@
 		63B24F921CF2DC3100DD6199 /* LTContactStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTContactStore.m; sourceTree = "<group>"; };
 		63B24F931CF2DC3100DD6199 /* LTContactsUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTContactsUtil.h; sourceTree = "<group>"; };
 		63B24F941CF2DC3100DD6199 /* LTContactsUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTContactsUtil.m; sourceTree = "<group>"; };
-		63B24F961CF2DC3100DD6199 /* LTDefineConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTDefineConstant.h; sourceTree = "<group>"; };
 		63B24F981CF2DC3100DD6199 /* LTInstallProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTInstallProcess.h; sourceTree = "<group>"; };
 		63B24F991CF2DC3100DD6199 /* LTInstallProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTInstallProcess.m; sourceTree = "<group>"; };
 		63B24F9B1CF2DC3100DD6199 /* LTLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLocation.h; sourceTree = "<group>"; };
@@ -557,7 +556,6 @@
 		63B24F951CF2DC3100DD6199 /* LTDefine */ = {
 			isa = PBXGroup;
 			children = (
-				63B24F961CF2DC3100DD6199 /* LTDefineConstant.h */,
 			);
 			path = LTDefine;
 			sourceTree = "<group>";
@@ -1108,7 +1106,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LTToolsDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yelon.LTToolsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1121,7 +1119,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LTToolsDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yelon.LTToolsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
