@@ -160,6 +160,7 @@ Pod::Spec.new do |s|
   s.subspec 'LTContactsUtil' do |lt|
     lt.source_files = 'LTTools/LTOther/LTContactsUtil/**/*.{h,m}'
 	lt.dependency 'LTTools/LTPickerView'
+	lt.dependency 'LTTools/NSObject'
   end
   
   s.subspec 'LTInstallProcess' do |lt|
@@ -179,6 +180,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'LTOpenSettings' do |lt|
     lt.source_files = 'LTTools/LTOther/LTOpenSettings/**/*.{h,m}'
+	lt.dependency 'LTTools/NSObject'
   end
   
   s.subspec 'LTPickerView' do |lt|
@@ -251,5 +253,6 @@ Pod::Spec.new do |s|
   s.subspec 'LTWebView' do |lt|
     lt.source_files = 'LTTools/LTUI/LTView/LTWebView/**/*.{h,m}'
 	lt.dependency 'LTTools/UIBarButtonItem'
+	lt.resources = "LTTools/LTUI/LTView/LTWebView/LTWebViewController/*.png"
   end
 end
