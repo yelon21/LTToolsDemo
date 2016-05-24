@@ -57,7 +57,6 @@
 		63B250011CF2DC3100DD6199 /* LTRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B24FAD1CF2DC3100DD6199 /* LTRequest.m */; };
 		63B250021CF2DC3100DD6199 /* LTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B24FB11CF2DC3100DD6199 /* LTButton.m */; };
 		63B250031CF2DC3100DD6199 /* LTSMSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B24FB31CF2DC3100DD6199 /* LTSMSButton.m */; };
-		63B250041CF2DC3100DD6199 /* LTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B24FB71CF2DC3100DD6199 /* LTAlertView.m */; };
 		63B250051CF2DC3100DD6199 /* LTBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B24FBA1CF2DC3100DD6199 /* LTBadgeView.m */; };
 		63B250061CF2DC3100DD6199 /* LTCipherText.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B24FBD1CF2DC3100DD6199 /* LTCipherText.m */; };
 		63B250071CF2DC3100DD6199 /* LTLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B24FC01CF2DC3100DD6199 /* LTLoadingView.m */; };
@@ -179,8 +178,6 @@
 		63B24FB11CF2DC3100DD6199 /* LTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTButton.m; sourceTree = "<group>"; };
 		63B24FB21CF2DC3100DD6199 /* LTSMSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSMSButton.h; sourceTree = "<group>"; };
 		63B24FB31CF2DC3100DD6199 /* LTSMSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSMSButton.m; sourceTree = "<group>"; };
-		63B24FB61CF2DC3100DD6199 /* LTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAlertView.h; sourceTree = "<group>"; };
-		63B24FB71CF2DC3100DD6199 /* LTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAlertView.m; sourceTree = "<group>"; };
 		63B24FB91CF2DC3100DD6199 /* LTBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBadgeView.h; sourceTree = "<group>"; };
 		63B24FBA1CF2DC3100DD6199 /* LTBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTBadgeView.m; sourceTree = "<group>"; };
 		63B24FBC1CF2DC3100DD6199 /* LTCipherText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCipherText.h; sourceTree = "<group>"; };
@@ -502,7 +499,6 @@
 			isa = PBXGroup;
 			children = (
 				63B24F821CF2DC3100DD6199 /* LTContactsUtil */,
-				63B24F951CF2DC3100DD6199 /* LTDefine */,
 				63B24F971CF2DC3100DD6199 /* LTInstallProcess */,
 				63B24F9A1CF2DC3100DD6199 /* LTLocation */,
 				63B24F9D1CF2DC3100DD6199 /* LTNotification */,
@@ -551,13 +547,6 @@
 				63B24F941CF2DC3100DD6199 /* LTContactsUtil.m */,
 			);
 			path = LTContactsUtil;
-			sourceTree = "<group>";
-		};
-		63B24F951CF2DC3100DD6199 /* LTDefine */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LTDefine;
 			sourceTree = "<group>";
 		};
 		63B24F971CF2DC3100DD6199 /* LTInstallProcess */ = {
@@ -654,7 +643,6 @@
 		63B24FB41CF2DC3100DD6199 /* LTView */ = {
 			isa = PBXGroup;
 			children = (
-				63B24FB51CF2DC3100DD6199 /* LTAlertView */,
 				63B24FB81CF2DC3100DD6199 /* LTBadgeView */,
 				63B24FBB1CF2DC3100DD6199 /* LTCipherText */,
 				63B24FBE1CF2DC3100DD6199 /* LTLoadingView */,
@@ -662,15 +650,6 @@
 				63B24FC41CF2DC3100DD6199 /* LTWebView */,
 			);
 			path = LTView;
-			sourceTree = "<group>";
-		};
-		63B24FB51CF2DC3100DD6199 /* LTAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				63B24FB61CF2DC3100DD6199 /* LTAlertView.h */,
-				63B24FB71CF2DC3100DD6199 /* LTAlertView.m */,
-			);
-			path = LTAlertView;
 			sourceTree = "<group>";
 		};
 		63B24FB81CF2DC3100DD6199 /* LTBadgeView */ = {
@@ -970,7 +949,6 @@
 				63B24FFE1CF2DC3100DD6199 /* LTPickerView.m in Sources */,
 				63B250161CF2DC3100DD6199 /* UIView+LTCommon.m in Sources */,
 				63B250091CF2DC3100DD6199 /* LTWebView.m in Sources */,
-				63B250041CF2DC3100DD6199 /* LTAlertView.m in Sources */,
 				63B250101CF2DC3100DD6199 /* LTIOFlowBytes.m in Sources */,
 				63B24FED1CF2DC3100DD6199 /* NSString+LTEncryption.m in Sources */,
 				63B24FF81CF2DC3100DD6199 /* LTContactStore.m in Sources */,

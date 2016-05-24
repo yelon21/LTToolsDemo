@@ -27,11 +27,11 @@
 #define LT_SuperDealloc [super dealloc]
 #endif
 
-#define SUPPORT_ARM64 (__LP64__ || (TARGET_OS_EMBEDDED && !TARGET_OS_IPHONE) || TARGET_OS_WIN32 || NS_BUILD_32_LIKE_64)
+#define LT_SUPPORT_ARM64 (__LP64__ || (TARGET_OS_EMBEDDED && !TARGET_OS_IPHONE) || TARGET_OS_WIN32 || NS_BUILD_32_LIKE_64)
 
 
 #ifdef DEBUG
-#define LTLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#define LTLog(fmt, ...) NSLog(fmt, ...)
 #else
 #define LTLog(fmt, ...) nil
 #endif
@@ -50,8 +50,21 @@
 #define LT_ScreenWidth     [UIScreen mainScreen].bounds.size.width
 #define LT_ScreenHeight    [UIScreen mainScreen].bounds.size.height
 
+#pragma mark LT_IOS_VERSION
 #define LT_IOS_VERSION [[[UIDevice currentDevice]systemVersion] doubleValue]
+//6.0
+#define LT_IOS_Foundation_Before_6 LT_IOS_Foundation_Before(NSFoundationVersionNumber_iOS_5_1)
+#define LT_IOS_Foundation_Later_6  LT_IOS_Foundation_Later(NSFoundationVersionNumber_iOS_5_1)
+//7.0
+#define LT_IOS_Foundation_Before_7 LT_IOS_Foundation_Before(NSFoundationVersionNumber_iOS_6_1)
+#define LT_IOS_Foundation_Later_7  LT_IOS_Foundation_Later(NSFoundationVersionNumber_iOS_6_1)
+//8.0
+#define LT_IOS_Foundation_Before_8 LT_IOS_Foundation_Before(NSFoundationVersionNumber_iOS_7_1)
+#define LT_IOS_Foundation_Later_8  LT_IOS_Foundation_Later(NSFoundationVersionNumber_iOS_7_1)
+//9.0
+#define LT_IOS_Foundation_Before_9 LT_IOS_Foundation_Before(NSFoundationVersionNumber_iOS_8_4)
+#define LT_IOS_Foundation_Later_9  LT_IOS_Foundation_Later(NSFoundationVersionNumber_iOS_8_4)
 
-@interface NSObject ()
+#define LT_IOS_Foundation_Before(VersionNumber) floor(NSFoundationVersionNumber) <= VersionNumber
+#define LT_IOS_Foundation_Later(VersionNumber)  floor(NSFoundationVersionNumber) > VersionNumber
 
-@end

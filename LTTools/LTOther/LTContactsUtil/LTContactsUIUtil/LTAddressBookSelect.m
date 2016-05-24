@@ -7,6 +7,7 @@
 //
 
 #import "LTAddressBookSelect.h"
+#import "NSObject_define.h"
 #import <AddressBookUI/AddressBookUI.h>
 
 @interface LTAddressBookSelect ()<ABPeoplePickerNavigationControllerDelegate>
@@ -18,7 +19,7 @@
 
 + (BOOL)checkAuthorizationStatus{
     
-    if ([[UIDevice currentDevice].systemVersion floatValue]>=6.0) {
+    if (LT_IOS_Foundation_Later_6) {
         
         if (ABAddressBookGetAuthorizationStatus() != kABAuthorizationStatusAuthorized) {
 

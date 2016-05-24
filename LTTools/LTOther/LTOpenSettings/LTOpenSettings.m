@@ -7,6 +7,7 @@
 //
 
 #import "LTOpenSettings.h"
+#import "NSObject_define.h"
 #import <UIKit/UIApplication.h>
 
 @implementation LTOpenSettings
@@ -17,7 +18,7 @@ void LTOpenSettingsURLString(NSString *urlString){
         return;
     }
     if ([urlString isEqualToString:LTSettingsLocationURLString]&&
-        [[[UIDevice currentDevice]systemVersion] doubleValue]>=8.0) {
+        LT_IOS_Foundation_Later_8) {
         
         urlString = UIApplicationOpenSettingsURLString;
     }

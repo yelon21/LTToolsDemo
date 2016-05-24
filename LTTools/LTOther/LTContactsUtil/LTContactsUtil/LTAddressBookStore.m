@@ -7,6 +7,7 @@
 //
 
 #import "LTAddressBookStore.h"
+#import "NSObject_define.h"
 #import <AddressBook/AddressBook.h>
 
 #import <UIKit/UIKit.h>
@@ -60,7 +61,7 @@
     //新建一个通讯录类
     ABAddressBookRef addressBooks = nil;
     
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 6.0)
+    if (LT_IOS_Foundation_Later_6)
     {
         addressBooks =  ABAddressBookCreateWithOptions(NULL, NULL);
         //获取通讯录权限
@@ -177,7 +178,7 @@
 
 + (BOOL)LT_checkAuthorizationStatus{
     
-    if ([[UIDevice currentDevice].systemVersion floatValue]>=6.0) {
+    if (LT_IOS_Foundation_Later_6) {
         
         if (ABAddressBookGetAuthorizationStatus() != kABAuthorizationStatusAuthorized) {
             

@@ -261,7 +261,7 @@
     
     BOOL canLocated;
     
-    if ([[[UIDevice currentDevice]systemVersion]floatValue]>=8.0) {
+    if (LT_IOS_Foundation_Later_8) {
         
         canLocated = [self locateEnableIOS8Later];
     }
@@ -283,7 +283,7 @@
 
 - (BOOL)locateEnableIOS8Later{
     
-    if ([[[UIDevice currentDevice]systemVersion] floatValue]>=8.0) {
+    if (LT_IOS_Foundation_Later_8) {
         
         if ([CLLocationManager locationServicesEnabled] && ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways)) {
             
@@ -297,13 +297,14 @@
 }
 
 - (BOOL)locateEnableIOS8Before{
-    
+
     if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized) {
         
         //定位功能可用，开始定位
         
         return YES;
     }
+
     return NO;
 }
 

@@ -106,7 +106,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
+  s.resources = "LTTools/**/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -133,5 +133,123 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-
+  
+  # GTMBase64
+  s.subspec 'GTMBase64' do |lt|
+    lt.source_files = 'LTTools/OtherLibs/GTMBase64/**/*.{h,m}'
+  end
+  
+  # SSKeychain
+  s.subspec 'SSKeychain' do |lt|
+    lt.source_files = 'LTTools/OtherLibs/SSKeychain/**/*.{h,m}'
+  end
+  
+  # LTNS
+  s.subspec 'LTNS' do |lt|
+    lt.source_files = 'LTTools/LTNS/**/*.{h,m}'
+    lt.dependency 'LTTools/GTMBase64'
+  end
+  
+  # LTNS
+  s.subspec 'NSObject' do |lt|
+    lt.source_files = 'LTTools/LTNS/NSObject/**/*.{h,m}'
+    lt.dependency 'LTTools/GTMBase64'
+  end
+  
+  # LTOther
+  s.subspec 'LTContactsUtil' do |lt|
+    lt.source_files = 'LTTools/LTOther/LTContactsUtil/**/*.{h,m}'
+	lt.dependency 'LTTools/LTPickerView'
+  end
+  
+  s.subspec 'LTInstallProcess' do |lt|
+    lt.source_files = 'LTTools/LTOther/LTInstallProcess/**/*.{h,m}'
+  end
+  
+  s.subspec 'LTLocation' do |lt|
+    lt.source_files = 'LTTools/LTOther/LTLocation/**/*.{h,m}'
+    lt.dependency 'LTTools/GTMBase64'
+	lt.dependency 'LTTools/NSObject'
+	lt.dependency 'LTTools/LTOpenSettings'
+  end
+  
+  s.subspec 'LTNotification' do |lt|
+    lt.source_files = 'LTTools/LTOther/LTNotification/**/*.{h,m}'
+  end
+  
+  s.subspec 'LTOpenSettings' do |lt|
+    lt.source_files = 'LTTools/LTOther/LTOpenSettings/**/*.{h,m}'
+  end
+  
+  s.subspec 'LTPickerView' do |lt|
+    lt.source_files = 'LTTools/LTOther/LTPickerView/**/*.{h,m}'
+	lt.dependency 'LTTools/UIBarButtonItem'
+	lt.dependency 'LTTools/UIView'
+  end
+  
+  s.subspec 'LTPlistReader' do |lt|
+    lt.source_files = 'LTTools/LTOther/LTPlistReader/**/*.{h,m}'
+  end
+  
+  s.subspec 'LTRequest' do |lt|
+    lt.source_files = 'LTTools/LTOther/LTRequest/**/*.{h,m}'
+	lt.dependency 'LTTools/LTNS'
+  end
+  
+  # LTUI
+  s.subspec 'LTButton' do |lt|
+    lt.source_files = 'LTTools/LTUI/LTButton/**/*.{h,m}'
+  end
+  
+  s.subspec 'UIBarButtonItem' do |lt|
+    lt.source_files = 'LTTools/LTUI/UIBarButtonItem/**/*.{h,m}'
+  end
+  
+  s.subspec 'UIColor' do |lt|
+    lt.source_files = 'LTTools/LTUI/UIColor/**/*.{h,m}'
+  end
+  
+  s.subspec 'UIDevice' do |lt|
+    lt.source_files = 'LTTools/LTUI/UIDevice/**/*.{h,m}'
+	lt.dependency 'LTTools/SSKeychain'
+	lt.dependency 'LTTools/LTNS'
+  end
+  
+  s.subspec 'UIImage' do |lt|
+    lt.source_files = 'LTTools/LTUI/UIImage/**/*.{h,m}'
+  end
+  
+  s.subspec 'UIView' do |lt|
+    lt.source_files = 'LTTools/LTUI/UIView/**/*.{h,m}'
+  end
+  
+  s.subspec 'UIViewController' do |lt|
+    lt.source_files = 'LTTools/LTUI/UIViewController/**/*.{h,m}'
+	lt.dependency 'LTTools/UIBarButtonItem'
+	lt.dependency 'LTTools/UIColor'
+	lt.dependency 'LTTools/UIImage'
+	lt.dependency 'LTTools/UIView'
+  end
+  
+  #LTView
+  s.subspec 'LTBadgeView' do |lt|
+    lt.source_files = 'LTTools/LTUI/LTView/LTBadgeView/**/*.{h,m}'
+  end
+  
+  s.subspec 'LTCipherText' do |lt|
+    lt.source_files = 'LTTools/LTUI/LTView/LTCipherText/**/*.{h,m}'
+  end
+  
+  s.subspec 'LTLoadingView' do |lt|
+    lt.source_files = 'LTTools/LTUI/LTView/LTLoadingView/**/*.{h,m}'
+  end
+  
+  s.subspec 'LTTitleActivityView' do |lt|
+    lt.source_files = 'LTTools/LTUI/LTView/LTTitleActivityView/**/*.{h,m}'
+  end
+  
+  s.subspec 'LTWebView' do |lt|
+    lt.source_files = 'LTTools/LTUI/LTView/LTWebView/**/*.{h,m}'
+	lt.dependency 'LTTools/UIBarButtonItem'
+  end
 end
