@@ -94,7 +94,7 @@ Pod::Spec.new do |s|
   s.source_files  = "LTTools/**/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
-  # s.public_header_files = "Classes/**/*.h"
+  s.public_header_files = "LTTools/**/*.{h,m}"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -147,6 +147,7 @@ Pod::Spec.new do |s|
   # LTNS
   s.subspec 'LTNS' do |lt|
     lt.source_files = 'LTTools/LTNS/**/*.{h,m}'
+	lt.public_header_files = "LTTools/LTNS/**/*.{h,m}"
     lt.dependency 'LTTools/GTMBase64'
   end
   
