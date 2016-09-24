@@ -23,6 +23,15 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)lt_popToLastVCAfter:(CGFloat)delay{
+
+    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 3*NSEC_PER_SEC);
+    dispatch_after(time, dispatch_get_main_queue(), ^{
+       
+        [self lt_popToLastVC];
+    });
+}
+
 - (void)lt_setPresentedVCBackItem{
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem LT_item:@"X"

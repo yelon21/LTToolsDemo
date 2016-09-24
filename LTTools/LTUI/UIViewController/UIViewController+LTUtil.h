@@ -19,6 +19,7 @@
 
 - (void)lt_setNavBackItem;
 - (void)lt_popToLastVC;
+- (void)lt_popToLastVCAfter:(CGFloat)delay;
 
 - (void)lt_setPresentedVCBackItem;
 - (void)lt_dismissToLastVC;

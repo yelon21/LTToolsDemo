@@ -152,13 +152,13 @@
 }
 
 // Called after a property has been selected by the user.
-//- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker
-//                         didSelectPerson:(ABRecordRef)person
-//                                property:(ABPropertyID)property
-//                              identifier:(ABMultiValueIdentifier)identifier NS_AVAILABLE_IOS(8_0){
-//    
-//    [self didSelectPerson:person];
-//}
+- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker
+                         didSelectPerson:(ABRecordRef)person
+                                property:(ABPropertyID)property
+                              identifier:(ABMultiValueIdentifier)identifier NS_AVAILABLE_IOS(8_0){
+    
+    [self didSelectPerson:person];
+}
 
 // Called after the user has pressed cancel.
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{

@@ -12,7 +12,6 @@
 @interface PickerViewController ()<UIPickerViewDataSource,UIPickerViewDelegate>{
 
     UIPickerView *dataPickerView;
-    NSMutableArray *listArray;
     NSInteger selectedRow;
 }
 
@@ -24,7 +23,7 @@
     
     [super viewDidLoad];
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem LT_item:@"X"
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem LT_item:@"关闭"
                                                                color:[UIColor blackColor]
                                                               target:self
                                                                  sel:@selector(leftAction)];
@@ -43,6 +42,7 @@
     dataPickerView.showsSelectionIndicator = YES;
     dataPickerView.translatesAutoresizingMaskIntoConstraints = NO;
     [superView addSubview:dataPickerView];
+    [dataPickerView reloadAllComponents];
     
     [superView addConstraint:[NSLayoutConstraint constraintWithItem:dataPickerView
                                                           attribute:NSLayoutAttributeTop
@@ -76,32 +76,17 @@
 
 - (void)leftAction{
 
-//    if (self.selectedObj) {
-//        
-//        self.selectedObj(YES,nil);
-//    }
-    if ([self.delegate respondsToSelector:@selector(pickerViewControllerDidSelect:cancel:)]) {
+    if ([self.delegate respondsToSelector:@selector(pickerViewControllerDidSelectIndex:)]) {
         
-        [self.delegate pickerViewControllerDidSelect:nil cancel:YES];
+        [self.delegate pickerViewControllerDidSelectIndex:-1];
     }
 }
 - (void)rightAction{
     
-//    self.selectedObj(NO,listArray[selectedRow]);
-    if ([self.delegate respondsToSelector:@selector(pickerViewControllerDidSelect:cancel:)]) {
+    if ([self.delegate respondsToSelector:@selector(pickerViewControllerDidSelectIndex:)]) {
         
-        [self.delegate pickerViewControllerDidSelect:listArray[selectedRow] cancel:NO];
+        [self.delegate pickerViewControllerDidSelectIndex:selectedRow];
     }
-}
-
--(void)setItemArray:(NSArray *)itemArray{
-
-    if (!listArray) {
-        
-        listArray = [[NSMutableArray alloc]init];
-    }
-    [listArray setArray:itemArray];
-    [dataPickerView reloadAllComponents];
 }
 
 #pragma mark ================================
@@ -114,17 +99,33 @@
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
-    return [listArray count];
+    NSUInteger count = 0;
+    
+    if ([self.delegate respondsToSelector:@selector(pickerViewControllerNumberOfItems)]) {
+        
+        count = [self.delegate pickerViewControllerNumberOfItems];
+    }
+    return count;
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
-    return listArray[row][@"title"];
+    NSString *title = @"";
+    
+    if ([self.delegate respondsToSelector:@selector(pickerViewControllerTitleForRowAtIndex:)]) {
+        
+        title = [self.delegate pickerViewControllerTitleForRowAtIndex:row];
+    }
+    return title;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
     selectedRow = row;
+    if ([self.delegate respondsToSelector:@selector(pickerViewControllerDidChangeToIndex:)]) {
+        
+        [self.delegate pickerViewControllerDidChangeToIndex:row];
+    }
 }
 
 @end

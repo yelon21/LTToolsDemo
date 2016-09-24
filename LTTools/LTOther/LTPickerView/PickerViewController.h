@@ -10,12 +10,16 @@
 
 @protocol PickerViewControllerDelegate <NSObject>
 
-- (void)pickerViewControllerDidSelect:(id)obj cancel:(BOOL)cancel;
+- (void)pickerViewControllerDidSelectIndex:(NSInteger)index;
+
+- (NSUInteger)pickerViewControllerNumberOfItems;
+- (NSString *)pickerViewControllerTitleForRowAtIndex:(NSInteger)rowIndex;
+
+@optional
+- (void)pickerViewControllerDidChangeToIndex:(NSInteger)index;
 
 @end
 @interface PickerViewController : UIViewController
 
-//@property(nonatomic,strong)void(^selectedObj)(BOOL cancel, id obj);
 @property(nonatomic,assign)id<PickerViewControllerDelegate>delegate;
-@property(nonatomic,assign)NSArray *itemArray;
 @end

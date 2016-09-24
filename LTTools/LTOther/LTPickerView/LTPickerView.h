@@ -8,11 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+@class LTPickerView;
+
+@protocol LTPickerViewDelegate <NSObject>
+
+- (NSUInteger)numberOfItemInltPickerView:(LTPickerView *)ltPickerView;
+- (NSString *)ltPickerView:(LTPickerView *)ltPickerView
+        titleForRowAtIndex:(NSInteger)rowIndex;
+- (void)ltPickerView:(LTPickerView *)ltPickerView
+ didSelectRowAtIndex:(NSInteger)rowIndex;
+@optional
+- (void)ltPickerView:(LTPickerView *)ltPickerView
+ didChangeToIndex:(NSInteger)rowIndex;
+@end
+
 @interface LTPickerView : UIView
 
 + (instancetype)showPickerViewInView:(UIView *)inView
-                         sourceArray:(NSArray *)sourceArray
-                            selected:(void(^)(BOOL cancel,id obj))selectedBlock;
+                            delegate:(id<LTPickerViewDelegate>)delegate;
 
-#define LTPickerView_Title @"title"
 @end

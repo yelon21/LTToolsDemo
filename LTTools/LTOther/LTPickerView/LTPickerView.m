@@ -12,7 +12,7 @@
 
 @interface LTPickerView ()<PickerViewControllerDelegate>
 
-@property(nonatomic,strong)void(^selectedBlock)(BOOL cancel,id obj);
+@property(nonatomic,strong)id<LTPickerViewDelegate>delegate;
 @property(nonatomic,strong)PickerViewController *pickerVC;
 @property(nonatomic,strong)UINavigationController *pickerNav;
 @end
@@ -20,12 +20,10 @@
 @implementation LTPickerView
 
 + (instancetype)showPickerViewInView:(UIView *)inView
-                 sourceArray:(NSArray *)sourceArray
-                    selected:(void(^)(BOOL cancel,id obj))selectedBlock{
+                            delegate:(id<LTPickerViewDelegate>)delegate{
 
     LTPickerView *pickerView = [[LTPickerView alloc]initWithSuperView:inView];
-    pickerView.selectedBlock = selectedBlock;
-    [pickerView showWithItemArray:sourceArray];
+    pickerView.delegate = delegate;
     return pickerView;
 }
 
@@ -68,6 +66,7 @@
                                                                constant:0]];
 
         [self initPickerVC];
+        [self moveInPickerVC];
     }
     return self;
 }
@@ -135,7 +134,7 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    [self pickerViewControllerDidSelect:nil cancel:YES];
+    [self pickerViewControllerDidSelectIndex:-1];
 }
 
 - (void)hidePickerVC{
@@ -146,23 +145,48 @@
                                   
                                   [self removeFromSuperview];
                               }];
-//    [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:0.75];
-    
 }
 
--(void)pickerViewControllerDidSelect:(id)obj cancel:(BOOL)cancel{
+-(void)pickerViewControllerDidSelectIndex:(NSInteger)index{
 
-    if (self.selectedBlock) {
-        self.selectedBlock(cancel,obj);
-    }
     [self hidePickerVC];
+    if (index<0) {
+        
+        return;
+    }
+    if ([self.delegate respondsToSelector:@selector(ltPickerView:didSelectRowAtIndex:)]) {
+        
+        [self.delegate ltPickerView:self didSelectRowAtIndex:index];
+    }
 }
 
-- (void)showWithItemArray:(NSArray *)itemArray{
+- (NSUInteger)pickerViewControllerNumberOfItems{
 
-    self.pickerVC.itemArray = itemArray;
+    NSUInteger count = 0;
+    if ([self.delegate respondsToSelector:@selector(numberOfItemInltPickerView:)]) {
+        
+        count = [self.delegate numberOfItemInltPickerView:self];
+    }
+    return count;
+}
+
+- (NSString *)pickerViewControllerTitleForRowAtIndex:(NSInteger)rowIndex{
+
+    NSString *title = @"";
     
-    [self moveInPickerVC];
+    if ([self.delegate respondsToSelector:@selector(ltPickerView:titleForRowAtIndex:)]) {
+        
+        title = [self.delegate ltPickerView:self titleForRowAtIndex:rowIndex];
+    }
+    return title;
+}
+
+- (void)pickerViewControllerDidChangeToIndex:(NSInteger)index{
+
+    if ([self.delegate respondsToSelector:@selector(ltPickerView:didChangeToIndex:)]) {
+        
+        [self.delegate ltPickerView:self didChangeToIndex:index];
+    }
 }
 
 @end

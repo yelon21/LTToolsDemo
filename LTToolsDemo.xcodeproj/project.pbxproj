@@ -826,6 +826,8 @@
 				TargetAttributes = {
 					63B24F1A1CF2DB5400DD6199 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = U7DFNWQBUU;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1083,11 +1085,15 @@
 			baseConfigurationReference = CD8E3F2BFDAED63EDA0351BA /* Pods-LTToolsDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: yan long (YLPDX7PGCY)";
+				DEVELOPMENT_TEAM = U7DFNWQBUU;
 				INFOPLIST_FILE = LTToolsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yelon.LTToolsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "971e2be5-83b1-4997-a1a8-a808d89bfdd8";
+				PROVISIONING_PROFILE_SPECIFIER = debug_any;
 			};
 			name = Debug;
 		};
@@ -1096,11 +1102,16 @@
 			baseConfigurationReference = D64552D602DF583D577ADD46 /* Pods-LTToolsDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: yan long (YLPDX7PGCY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yan long (YLPDX7PGCY)";
+				DEVELOPMENT_TEAM = U7DFNWQBUU;
 				INFOPLIST_FILE = LTToolsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yelon.LTToolsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "971e2be5-83b1-4997-a1a8-a808d89bfdd8";
+				PROVISIONING_PROFILE_SPECIFIER = debug_any;
 			};
 			name = Release;
 		};

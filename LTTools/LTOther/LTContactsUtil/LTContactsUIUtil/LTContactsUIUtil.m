@@ -13,7 +13,10 @@
 
 #import "LTPickerView.h"
 
-@interface LTContactsUIUtil ()
+@interface LTContactsUIUtil ()<LTPickerViewDelegate>{
+
+    NSArray *listArray;
+}
 
 @property(nonatomic,strong) NSObject *select;
 @property(nonatomic,strong) void (^didSelectPerson)(NSString *name,NSString *tel);
@@ -107,15 +110,32 @@
         [telsArray addObject:@{@"title":tel,@"value":tel}];
     }
     
+    listArray = telsArray;
+    
     [LTPickerView showPickerViewInView:viewCon.view
-                           sourceArray:telsArray
-                              selected:^(BOOL cancel, id obj) {
-                                  
-                                  NSLog(@"%@-%@",@(cancel),obj);
-                                  if (!cancel) {
-                                      
-                                      [self didSelect:name tel:obj[@"title"]];
-                                  }
-                              }];
+                              delegate:self];
+
+}
+#pragma mark LTPickerViewDelegate
+- (NSUInteger)numberOfItemInltPickerView:(LTPickerView *)ltPickerView{
+    
+    return [listArray count];
+}
+- (NSString *)ltPickerView:(LTPickerView *)ltPickerView
+        titleForRowAtIndex:(NSInteger)rowIndex{
+    
+    return listArray[rowIndex][@"title"];
+}
+- (void)ltPickerView:(LTPickerView *)ltPickerView
+ didSelectRowAtIndex:(NSInteger)rowIndex{
+    
+    NSLog(@"didSelect=%@",listArray[rowIndex][@"title"]);
+    NSDictionary *dic = listArray[rowIndex];
+    [self didSelect:dic[@"title"] tel:dic[@"value"]];
+}
+- (void)ltPickerView:(LTPickerView *)ltPickerView
+    didChangeToIndex:(NSInteger)rowIndex{
+    
+    NSLog(@"didChange=%@",listArray[rowIndex][@"title"]);
 }
 @end
